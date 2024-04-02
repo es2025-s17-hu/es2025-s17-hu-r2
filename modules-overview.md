@@ -30,5 +30,4 @@ To log in, you must use the username and password you have been given.
 After logging in, create a new repo for the next task using the following pattern fro the name: es2025-s17-hu-r2-module-a-YYYY, where YYYY is the 4-digit pin code you received. 
 ![Create new repo](assets/images/create-new-repo.png)
 
-Select a template
 
