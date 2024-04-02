@@ -17,3 +17,6 @@ You should thoroughly review the provided website structure and detailed pages a
 - Restaurant Name
 - Location (country, city)
 - Average bill per client
+
+
+create an immersive and visually appealing website for DineEase dining platform. The website's primary goal is to attract new users and showcase the unique features and offerings of the DineEase service. You will demonstrate your HTML, CSS and JavaScript skills to craft a captivating website that adheres to accessibility standards and implements SEO best practices. You should pay close attention to user experience (UX) by ensuring intuitive navigation, clear call-to-action buttons, and seamless interactions throughout the website.

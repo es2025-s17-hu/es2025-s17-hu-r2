@@ -2,6 +2,8 @@
 ### 05.06.2023.
 #### Budapest, Hungary
 
+![DineEase](assets/images/DineEase.png)
+
 ### Schedule
 - 09:00-09:15 Registration
 - 09:15-09:30 Welcome
