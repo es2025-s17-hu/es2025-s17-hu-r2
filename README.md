@@ -14,40 +14,11 @@
 - 15:00-16:30 Module C - Frontend (1,5 h)
 
 ## Modules
-### Modules Overviews
 - [Modules Overview](modules-overview.md)
-### Module A - Backend
-- Design Database
-- Import CSVs
-#### Restaurant CRUD
-- image upload
-#### User CRUD
-#### Plan
-- GET plans
-- Update a plan
-#### Login
-#### Payment
-### Module B - DineEase Admin
-- Login / Authentication
-- List Restaurants (paging)
-- Edit/Update Restaurant
-- Delete Restaurant
-- Edit/Update User
-- Delete User
-- Approve Registration
-- Plan Administration
-### Module C - Showcase Website v2
-#### Landing Page
-- Header with logo and menubar
-- Hero section
-- Top rated restaurants section
-- Footer
-#### Restaurant Registration Page
-- Fisrt Name
-- Last Name
-- Email
-- Select Country prefix by country code | Phone number
-- Next page
-- Restaurant Name
-- Location (country, city)
-- Average bill per client
+- [Modules A - DineEase Backend](module-a.md)
+- [Modules B - DineEase Admin](module-b.md)
+- [Modules C - DineEase Admin](module-c.md)
+
+
+
+
