@@ -28,10 +28,14 @@ The Gitea service is available at the following address:
 
 To log in, you must use the username and password you have been given.
 After logging in, create a new repo for the next task. 
+
 ![Create new repo](assets/images/create-new-repo.png)
+
 On the form write the name of the new repo using the following pattern: es2025-s17-hu-r2-module-a-YYYY, where YYYY is the 4-digit pin code you received.
 Under the template field select the corresponding template (e.g react-ts-app).
+
 ![Create new repo](assets/images/new-repo-by-template.png)
+
 Once the new repo is created, clone it to your own workstation inside the d:\es2025-s17-r2 folder.
 
 
