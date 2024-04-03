@@ -11,7 +11,7 @@ Submitted by: [Skills IT](https://skillsit.hu)
 
 You used to work as a freelance web developer, but now you've applied for a job as a developer at DineEase. The company's management wants to test your skills, so as part of the recruitment process, they asked you to develop the prototype of their new service. You have already successfully completed the first round of the recruitment process, and by creating a prototype for the DineEase showcase website, you have been selected from over 100 candidates to the second round, where only the top six candidates are left.
 
-In this round you will have three different tasks. First you have to create a backend with several REST API endpoints to serve the DineEase front end apps, then you will develop an admin app which will be used by the DineEase staff. Your final task is to develop a new version of the showcase website.
+In this round you will have three different tasks. First you have to create a backend with several REST API endpoints to serve the DineEase frontend apps, then you will develop an admin app which will be used by the DineEase staff. Your final task is to develop a new version of the showcase website.
 
 Descriptions of the three tasks:
 
