@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: competitor_db:3306
--- Létrehozás ideje: 2024. Ápr 03. 23:12
+-- Létrehozás ideje: 2024. Ápr 04. 17:43
 -- Kiszolgáló verziója: 8.3.0
 -- PHP verzió: 8.2.8
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Adatbázis: `5ubuuepk`
+-- Adatbázis: `competitor-YYYY`
 --
 
 -- --------------------------------------------------------
@@ -51,7 +51,7 @@ INSERT INTO `plans` (`id`, `name`, `monthlyFee`, `yearlyFee`, `description`) VAL
 --
 
 CREATE TABLE `restaurants` (
-  `restaurant_id` int NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `cuisine` varchar(255) DEFAULT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE `restaurants` (
 -- A tábla adatainak kiíratása `restaurants`
 --
 
-INSERT INTO `restaurants` (`restaurant_id`, `name`, `city`, `cuisine`, `address`, `zipCode`, `countryCode`) VALUES
+INSERT INTO `restaurants` (`id`, `name`, `city`, `cuisine`, `address`, `zipCode`, `countryCode`) VALUES
 (1, 'Szép Étterem', 'Budapest', 'Hungarian', 'Szentháromság u. 7.', '1014', 'HU'),
 (2, 'La Piața', 'Bucharest', 'Romanian', 'Strada Smardan 30.', '030167', 'RO'),
 (3, 'Gospoda Krakowska', 'Warsaw', 'Polish', 'ul. Foksal 17', '00-372', 'PL'),
@@ -150,6 +150,39 @@ INSERT INTO `roles` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `userRestaurant`
+--
+
+CREATE TABLE `userRestaurant` (
+  `id` int NOT NULL,
+  `userId` int DEFAULT NULL,
+  `restaurantId` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- A tábla adatainak kiíratása `userRestaurant`
+--
+
+INSERT INTO `userRestaurant` (`id`, `userId`, `restaurantId`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 2, 3),
+(4, 3, 4),
+(5, 3, 5),
+(6, 3, 6),
+(7, 4, 7),
+(8, 4, 8),
+(9, 4, 9),
+(10, 4, 10),
+(11, 6, 11),
+(12, 6, 12),
+(13, 6, 13),
+(14, 6, 14),
+(15, 8, 15);
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `users`
 --
 
@@ -159,24 +192,26 @@ CREATE TABLE `users` (
   `lastName` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `roleId` int DEFAULT NULL
+  `roleId` int DEFAULT NULL,
+  `planId` int DEFAULT NULL,
+  `annualPayment` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- A tábla adatainak kiíratása `users`
 --
 
-INSERT INTO `users` (`id`, `firstName`, `lastName`, `email`, `password`, `roleId`) VALUES
-(1, 'John', 'Doe', 'john.doe@example.com', '$2b$10$DPXEXQTLJwHgP3LT8RWC8.aX7KcRbKv.A1yC8E5ARuB62vpcKOypG', 2),
-(2, 'Jane', 'Doe', 'jane.doe@example.com', '$2b$10$N2xnrqd3/ZMc6cO1XYnRTekFiqZLQ4wZNIMUAur8thdcrcnXw7paa', 2),
-(3, 'Michael', 'Smith', 'michael.smith@example.com', '$2b$10$4uwSF.Buk3MRXXC34.Yzhe8tOd1sSglnbavl4ABtfp5C7NLwfeSGe', 1),
-(4, 'Sarah', 'Brown', 'sarah.brown@example.com', '$2b$10$rvjOqOsw2dQcu2MkHKTyuuuBkD/OcLcInu0v3DUDGEshh8PjenfLC', 3),
-(5, 'Brian', 'Davis', 'brian.davis@example.com', '$2b$10$qupXOd5wn0Oc0ndVyVlI4.0HwRusTHGXrC4tiehNUXuOBcJ3RxOOm', 3),
-(6, 'Lisa', 'Wilson', 'lisa.wilson@example.com', '$2b$10$Unnx0VQ1cVIUiyixN0LbqOpvmMernzdvKaPOqVdypXbbG.JCDmf.K', 2),
-(7, 'James', 'Garcia', 'james.garcia@example.com', '$2b$10$UNuvnRK1.TEu80wvVIsVVuTgGGWfZ9LmuMMJr/NNWwuqNiQbxjOt6', 1),
-(8, 'Linda', 'Martinez', 'linda.martinez@example.com', '$2b$10$p7ugUiYQltgFPJTR9hMm2uXN9kcl6Ds0nC3BU25PFj21JDuoqIKF.', 2),
-(9, 'Robert', 'Robinson', 'robert.robinson@example.com', '$2b$10$myokXGZNH7oowxKqVHRrHeeI2hIxxCnC9Jmwxl8CTHOM7Uoq6mqNS', 3),
-(10, 'Patricia', 'Clark', 'patricia.clark@example.com', '$2b$10$.AAOzD5AgiRNepvtRi0M0uc4gzuYHoanvNtOzYfYidw5tFkTrMXYa', 3);
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `email`, `password`, `roleId`, `planId`, `annualPayment`) VALUES
+(1, 'John', 'Doe', 'john.doe@example.com', '$2b$10$DPXEXQTLJwHgP3LT8RWC8.aX7KcRbKv.A1yC8E5ARuB62vpcKOypG', 2, NULL, NULL),
+(2, 'Jane', 'Doe', 'jane.doe@example.com', '$2b$10$N2xnrqd3/ZMc6cO1XYnRTekFiqZLQ4wZNIMUAur8thdcrcnXw7paa', 2, NULL, NULL),
+(3, 'Michael', 'Smith', 'michael.smith@example.com', '$2b$10$4uwSF.Buk3MRXXC34.Yzhe8tOd1sSglnbavl4ABtfp5C7NLwfeSGe', 1, NULL, NULL),
+(4, 'Sarah', 'Brown', 'sarah.brown@example.com', '$2b$10$rvjOqOsw2dQcu2MkHKTyuuuBkD/OcLcInu0v3DUDGEshh8PjenfLC', 2, NULL, NULL),
+(5, 'Brian', 'Davis', 'brian.davis@example.com', '$2b$10$qupXOd5wn0Oc0ndVyVlI4.0HwRusTHGXrC4tiehNUXuOBcJ3RxOOm', 3, NULL, NULL),
+(6, 'Lisa', 'Wilson', 'lisa.wilson@example.com', '$2b$10$Unnx0VQ1cVIUiyixN0LbqOpvmMernzdvKaPOqVdypXbbG.JCDmf.K', 2, NULL, NULL),
+(7, 'James', 'Garcia', 'james.garcia@example.com', '$2b$10$UNuvnRK1.TEu80wvVIsVVuTgGGWfZ9LmuMMJr/NNWwuqNiQbxjOt6', 1, NULL, NULL),
+(8, 'Linda', 'Martinez', 'linda.martinez@example.com', '$2b$10$p7ugUiYQltgFPJTR9hMm2uXN9kcl6Ds0nC3BU25PFj21JDuoqIKF.', 2, NULL, NULL),
+(9, 'Robert', 'Robinson', 'robert.robinson@example.com', '$2b$10$myokXGZNH7oowxKqVHRrHeeI2hIxxCnC9Jmwxl8CTHOM7Uoq6mqNS', 3, NULL, NULL),
+(10, 'Patricia', 'Clark', 'patricia.clark@example.com', '$2b$10$.AAOzD5AgiRNepvtRi0M0uc4gzuYHoanvNtOzYfYidw5tFkTrMXYa', 3, NULL, NULL);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -192,7 +227,7 @@ ALTER TABLE `plans`
 -- A tábla indexei `restaurants`
 --
 ALTER TABLE `restaurants`
-  ADD PRIMARY KEY (`restaurant_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- A tábla indexei `reviews`
@@ -208,12 +243,21 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- A tábla indexei `userRestaurant`
+--
+ALTER TABLE `userRestaurant`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userId` (`userId`),
+  ADD KEY `restaurantId` (`restaurantId`);
+
+--
 -- A tábla indexei `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD KEY `roleId` (`roleId`);
+  ADD KEY `roleId` (`roleId`),
+  ADD KEY `fk_plan` (`planId`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
@@ -232,6 +276,12 @@ ALTER TABLE `roles`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT a táblához `userRestaurant`
+--
+ALTER TABLE `userRestaurant`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- Megkötések a kiírt táblákhoz
 --
 
@@ -239,12 +289,20 @@ ALTER TABLE `roles`
 -- Megkötések a táblához `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`restaurantId`) REFERENCES `restaurants` (`restaurant_id`);
+  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`restaurantId`) REFERENCES `restaurants` (`id`);
+
+--
+-- Megkötések a táblához `userRestaurant`
+--
+ALTER TABLE `userRestaurant`
+  ADD CONSTRAINT `userRestaurant_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `userRestaurant_ibfk_2` FOREIGN KEY (`restaurantId`) REFERENCES `restaurants` (`id`);
 
 --
 -- Megkötések a táblához `users`
 --
 ALTER TABLE `users`
+  ADD CONSTRAINT `fk_plan` FOREIGN KEY (`planId`) REFERENCES `plans` (`id`),
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`);
 COMMIT;
 

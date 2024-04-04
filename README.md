@@ -12,7 +12,7 @@
 - 12:00-12:45 Lunch Break
 - 12:45-13:45 Module B/2 - Admin (1h)
 - 13:45-14:45 Module C - Frontend (1h)
-- 14:45-15:00 Kávészünet
+- 14:45-15:00 Coffee Break
 - 15:00-16:30 Module C - Frontend (1,5 h)
 
 ## Modules
