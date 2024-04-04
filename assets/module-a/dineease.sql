@@ -33,7 +33,7 @@ CREATE TABLE `plans` (
   `monthlyFee` decimal(10,2) DEFAULT NULL,
   `yearlyFee` decimal(10,2) DEFAULT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `plans`
@@ -58,7 +58,7 @@ CREATE TABLE `restaurants` (
   `address` varchar(255) DEFAULT NULL,
   `zipCode` varchar(10) DEFAULT NULL,
   `countryCode` char(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `restaurants`
@@ -93,7 +93,7 @@ CREATE TABLE `reviews` (
   `name` varchar(255) DEFAULT NULL,
   `rating` decimal(3,1) DEFAULT NULL,
   `comment` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `reviews`
@@ -136,7 +136,7 @@ CREATE TABLE `roles` (
   `id` int NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `roles`
@@ -157,7 +157,7 @@ CREATE TABLE `userRestaurant` (
   `id` int NOT NULL,
   `userId` int DEFAULT NULL,
   `restaurantId` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `userRestaurant`
@@ -187,15 +187,16 @@ INSERT INTO `userRestaurant` (`id`, `userId`, `restaurantId`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `firstName` varchar(255) DEFAULT NULL,
   `lastName` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `roleId` int DEFAULT NULL,
   `planId` int DEFAULT NULL,
-  `annualPayment` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `annualPayment` tinyint(1) DEFAULT NULL,
+  `isActive` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- A tábla adatainak kiíratása `users`
@@ -254,7 +255,6 @@ ALTER TABLE `userRestaurant`
 -- A tábla indexei `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
   ADD KEY `roleId` (`roleId`),
   ADD KEY `fk_plan` (`planId`);
