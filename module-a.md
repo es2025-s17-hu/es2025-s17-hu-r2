@@ -9,15 +9,6 @@ The database is currently empty. Use the givem SQL dump in `assets/module-a/dine
 
 ![DineEase](assets/images/db-diagram.png)
 
-<!-- ## Data Conversation Task
-Before building the backend, the company wants to test your data management skills in a separate exercise. An `assets/module-a/allUsers.json`file contains the data of all registered users. If a user is a restaurant owner, his record contains his registered restaurants and the restaurant records contain the ratings given to the restaurant. Based on allUsers.json, create separate json files corresponding to the entities in the database with the following names: 
-- restaurants.json
-- reviews.json
-- users.json
-- roles.json
-- plans.json
-Store these files in the `/jsons` folder of your backlend repo. -->
-
 ## Backend Task
 
 You will need to create several endpoints, which will be available at the base URL `http://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
@@ -48,7 +39,7 @@ The user roles cannot be changed in the admin interface, but you may need the ro
 
 ### Reviews
 
-Az admin appban a az éttermek review-jai is megjeleníthetők, illetve a nem kívánatos bejegyzések törölhetők is. Ehhez kát endpointot kell létrehoznod:
+In the admin app, restaurant reviews can be displayed and unwanted entries can be deleted. To do this, you need to create two endpoints:
 
 - get all reviews with brief data (name and city) about the corresponding restaurant, sorted backwards by date of entry
 - delete a selected review

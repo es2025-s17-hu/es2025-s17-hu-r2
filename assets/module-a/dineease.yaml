@@ -2,126 +2,69 @@ openapi: 3.0.0
 info:
   title: DineEase Backend API
   version: 1.0.0
-  description: Backend services for the DineEase platform, providing functionalities for restaurants, users, plans, login, and payment.
+  description: API for managing DineEase service data for the admin and web applications.
+servers:
+  - url: http://competitor-YYYY-module-a.dineease.com/api/v1
+    description: Base URL for API endpoints (Replace YYYY with your four-digit pin)
 
 paths:
-  /restaurants:
+  /users:
     get:
-      summary: Get a list of all restaurants
+      summary: Get brief data of all users
       responses:
         '200':
-          description: A list of restaurants.
+          description: An array of users
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Restaurant'
-    post:
-      summary: Create a new restaurant
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Restaurant'
-      responses:
-        '201':
-          description: Restaurant created.
+                  $ref: '#/components/schemas/UserBrief'
 
-  /restaurants/{id}:
+  /users/{id}:
     get:
-      summary: Get a restaurant by ID along with its reviews
+      summary: Get detailed information about a selected user
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           required: true
           schema:
             type: integer
-          description: The ID of the restaurant to retrieve
       responses:
         '200':
-          description: A restaurant object along with reviews
+          description: Detailed user information
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  restaurant:
-                    $ref: '#/components/schemas/Restaurant'
-                  reviews:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Review'
-        '404':
-          description: Restaurant not found    
-    put:
-      summary: Update a restaurant by ID
+                $ref: '#/components/schemas/UserDetailed'
+
+    patch:
+      summary: Disable or activate a user
       parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
               properties:
-                image:
-                  type: string
-                  format: binary
-              required:
-                - image
+                isActive:
+                  type: boolean
       responses:
         '200':
-          description: Restaurant updated.
-    delete:
-      summary: Delete a restaurant by ID
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: integer
-      responses:
-        '204':
-          description: Restaurant deleted.
-
-  /users:
-    post:
-      summary: Register a new user
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-      responses:
-        '201':
-          description: User created.
-
-  /users/login:
-    post:
-      summary: User login
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Login'
-      responses:
-        '200':
-          description: User logged in.
+          description: User activation status updated
 
   /plans:
     get:
-      summary: Get available plans
+      summary: Get the data of all plans
       responses:
         '200':
-          description: A list of available plans.
+          description: An array of subscription plans
           content:
             application/json:
               schema:
@@ -129,123 +72,139 @@ paths:
                 items:
                   $ref: '#/components/schemas/Plan'
 
-  /plans/{id}:
     put:
-      summary: Update a plan by ID
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
+      summary: Update a selected plan
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Plan'
+              $ref: '#/components/schemas/PlanUpdate'
       responses:
         '200':
-          description: Plan updated.
-
-  /payment:
-    post:
-      summary: Process a payment
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Payment'
-      responses:
-        '200':
-          description: Payment processed.
+          description: Plan updated
 
   /roles:
     get:
-      summary: Get a list of all user roles
+      summary: Get the data of all roles
       responses:
         '200':
-          description: A list of user roles.
+          description: An array of roles
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Roles'
+                  $ref: '#/components/schemas/Role'
+
+  /reviews:
+    get:
+      summary: Get all reviews with brief restaurant data
+      responses:
+        '200':
+          description: An array of reviews with restaurant data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+
+  /reviews/{id}:
+    delete:
+      summary: Delete a selected review
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Review deleted
+
+  /registration:
+    post:
+      summary: Register a new restaurant owner with restaurants and subscription plan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Registration'
+      responses:
+        '201':
+          description: User, restaurants, and plan created
 
 components:
   schemas:
-    Restaurant:
-      type: object
-      properties:
-        restaurant_id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        city:
-          type: string
-        cuisine:
-          type: string
-        address:
-          type: string
-        zipCode:
-          type: string
-        countryCode:
-          type: string
-      required:
-        - id
-
-    Review:
+    UserBrief:
       type: object
       properties:
         id:
           type: integer
-          format: int64
-        restaurantId:
+        firstName:
+          type: string
+        lastName:
+          type: string
+    UserDetailed:
+      allOf:
+        - $ref: '#/components/schemas/UserBrief'
+        - type: object
+          properties:
+            email:
+              type: string
+            roleId:
+              type: integer
+            planId:
+              type: integer
+    Plan:
+      type: object
+      properties:
+        id:
           type: integer
-          format: int64
         name:
           type: string
-        rating:
+        monthlyFee:
           type: number
-          format: float
-        comment:
+        yearlyFee:
+          type: number
+        description:
           type: string
-      required:
-        - id
-
+    PlanUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        monthlyFee:
+          type: number
+        yearlyFee:
+          type: number
+        description:
+          type: string
     Role:
       type: object
       properties:
         id:
           type: integer
-          format: int64
         name:
           type: string
         description:
           type: string
-      required:
-        - id
-
-    User:
+    Review:
       type: object
       properties:
         id:
           type: integer
-          format: int64
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
-          type: string
-        password:
-          type: string
-        roleId:
+        restaurantId:
           type: integer
-          format: int64
-      required:
-        - id
-
+        name:
+          type: string
+        rating:
+          type: number
+        comment:
+          type: string
+    Registration:
+      type: object
+      properties:
+        # Define user, plan, and restaurants properties for registration
