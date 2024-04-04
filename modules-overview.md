@@ -21,7 +21,11 @@ Descriptions of the three tasks:
 
 ## Technical Environment
 
-You can solve the tasks by doing the development on your own machine. For all three tasks, you can start with the selected template repo available on DineEasy Gitea.
+You can solve the tasks by doing the development on your own machine. 
+
+### Gitea, git
+
+For all three tasks, you can start with the selected template repo available on DineEasy Gitea.
 
 The Gitea service is available at the following address:
 [https://gitea.dineease.com](https://gitea.dineease.com)
@@ -39,6 +43,33 @@ After logging in, create a new repo for the next task.
 
 Once the new repo is created, clone it to your own workstation inside the `d:\es2025-s17-r2` folder.
 
+### Using npm modules
+
+The npm modules will be accessible via a local npm cache. This means that even though there will be no internet access to the machines, you will be able to add the available npm modules to the projects as usual, and the `npm install` command issued on the cloned template projects will install all the npm modules needed for your project. 
+
+The available npm modules:
+
+- express
+- mysql
+- mysql2
+- vue-router
+- react-router
+- react-router-dom
+- axios
+- sass
+- tailwindcss
+
+### Laravel projects, composer install
+
+The Laravel project contains all the necessary files, so you will not need to `composer install`. Your workstation has PHP 8 installed, so you can use the `php artisan` commands in the Laravel project.
+
+### Deployment
+
 When you commit and push your work, the deployment will start automatically. You can follow the process in the Gitea interface under the Action tab. Once the deployment is complete, your project will be available at http://competitor-YYYY-module-x.dineease.com, where `YYYY` is your four-digit pin code and `x` is the letter of the module.
+
+### Database access
+
+You will have your own database on the MySQL database server (`db.dineease.com`) available on the local network. You will need to use this database for development, and the same database will provide the data for your projects deployed to the server. A database dump will be provided to provide the the initial data. During the marking, the database will be restored to its original state using the same dump.
+
 
 
