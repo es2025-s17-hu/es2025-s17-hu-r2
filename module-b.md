@@ -15,21 +15,22 @@ The admin app should be designed with a user-friendly interface and provide effi
 ### Login Page
 - **Objective**: Create a login page for DineEase staff. Although there is no fully functional authentication endpoint available, simulate the login process using the "get all users" endpoint from Module A.
 - **Tasks**:
-  - Design a login form with fields for username and password.
-  - On form submission, fetch the list of users and simulate authentication.
-  - Redirect authenticated users to the main menu.
+  - Design a login form with fields for username (email) and password.
+  - Check that the username user entered matches the email address format and that the password at least 4 characters long.
+  - On form submission, fetch the list of users and simulate authentication. If the user exists with the specified email address and their role is admin, then consider the user logged in. Otherwise the following error message should display: "Incorrect username or password"
+  - Redirect authenticated users to the Restaurants page menu.
 
 ### Menu
 - **Objective**: Implement a navigation menu with links to the main sections of the admin app: Restaurants, Users, Reviews, and Logout.
 - **Tasks**:
-  - Design a responsive menu accessible throughout the admin app.
+  - Design a menu accessible throughout the admin app.
   - Ensure easy navigation to the Restaurants, Users, Reviews pages, and a Logout option.
 
 ### Restaurants Page
 - **Objective**: List restaurants with pagination, displaying brief data for each restaurant.
 - **Tasks**:
   - Fetch and display a list of restaurants showing name, city, countryCode, address, and average review rating.
-  - Implement pagination to manage the display of a large number of restaurants.
+  - Implement pagination to manage the display of a large number of restaurants. Maximum number of items per page is 10.
   - Design the UI for clarity and ease of use.
 
 ### Users Page
