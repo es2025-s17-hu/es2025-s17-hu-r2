@@ -38,7 +38,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/UserDetailed'
 
-    patch:
+    put:
       summary: Disable or activate a user
       parameters:
         - name: id
@@ -71,9 +71,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Plan'
-
+  /plans/{id}:
     put:
       summary: Update a selected plan
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
       requestBody:
         required: true
         content:
@@ -135,6 +141,12 @@ paths:
       responses:
         '201':
           description: User, restaurants, and plan created
+  /reset-db:
+    post:
+      summary: Reset DB
+      responses:
+        '201':
+          description: Done
 
 components:
   schemas:
@@ -207,4 +219,30 @@ components:
     Registration:
       type: object
       properties:
-        # Define user, plan, and restaurants properties for registration
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        planId:
+          type: integer
+        restaurants:
+          type: array
+          items: 
+            type: object
+            properties:
+              name:
+                type: string
+              city:
+                type: string
+              cuisine:
+                type: string
+              address:
+                type: string
+              zipCode:
+                type: string
+              countryCode:
+                type: string
