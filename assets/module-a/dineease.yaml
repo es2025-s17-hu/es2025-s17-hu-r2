@@ -55,8 +55,6 @@ paths:
                       $ref: '#/components/schemas/Review'
         '404':
           description: Restaurant not found    
-
-  /restaurants/{id}:
     put:
       summary: Update a restaurant by ID
       parameters:
