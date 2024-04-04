@@ -27,6 +27,15 @@ You can solve the tasks by doing the development on your own machine.
 
 For all three tasks, you can start with the selected template repo available on DineEasy Gitea.
 
+The available template repos:
+
+- react-app
+- react-ts-app
+- vue-app
+- vue-ts-app
+- laravel
+- nodejs-app
+
 The Gitea service is available at the following address:
 [https://gitea.dineease.com](https://gitea.dineease.com)
 
@@ -35,8 +44,8 @@ After logging in, create a new repo for the next task.
 
 ![Create new repo](assets/images/create-new-repo.png)
 
-- In the Owner field, select competitors team! **Make sure you set this option carefully, because if you set your own user as owner, the automatic deployment will not work!** 
-- On the form write the name of the new repo using the following pattern: `es2025-s17-hu-r2-module-a-YYYY`, where `YYYY` is the 4-digit pin code you received.
+- In the Owner field, select `competitors` team! **Make sure you set this option carefully, because if you set your own user as owner, the automatic deployment will not work!** 
+- Give the name of the new repo using the following pattern: `es2025-s17-hu-r2-module-a-YYYY`, where `YYYY` is the 4-digit pin code you received.
 - Under the template field, select the appropriate template (e.g. `react-ts-app`). Select `Git Content (Default Branch)` for `Template Items`.
 
 ![Create new repo](assets/images/new-repo-by-template.png)
@@ -58,6 +67,8 @@ The available npm modules:
 - axios
 - sass
 - tailwindcss
+- postcss
+- autoprefixer
 
 ### Laravel projects, composer install
 
