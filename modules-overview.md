@@ -39,7 +39,7 @@ The available template repos:
 The Gitea service is available at the following address:
 [https://gitea.dineease.com](https://gitea.dineease.com)
 
-To log in, you must use the username and password you have been given.
+To log in, you must use the username and password (a 4-digit pin code) you have been given.
 After logging in, create a new repo for the next task. 
 
 ![Create new repo](assets/images/create-new-repo.png)
