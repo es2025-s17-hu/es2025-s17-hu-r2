@@ -9,20 +9,21 @@ The admin app should be designed with a user-friendly interface and provide effi
 - **Objective**: Create a login page for DineEase staff. Although there is no fully functional authentication endpoint available, simulate the login process using the "get all users" endpoint from Module A.
 - **Tasks**:
   - Design a login form with fields for username (email) and password.
-  - Check that the username user entered matches the email address format and that the password at least 4 characters long.
-  - On form submission, fetch the list of users and simulate authentication. If the user exists with the specified email address and their role is admin, then consider the user logged in. Otherwise the following error message should display: "Incorrect username or password"
+  - Check that the username the user entered matches the email address format and that the password is at least 4 characters long.
+  - On form submission, fetch the list of users and simulate authentication. If the user exists with the specified email address and their role is admin, consider the user logged in. Otherwise, the following error message should be displayed: `Incorrect username or password.`
   - Redirect authenticated users to the Restaurants page menu.
+  - If the user is already logged in and refreshes the screen, they should remain logged in and access the admin pages.
 
 ### Menu
 - **Objective**: Implement a navigation menu with links to the main sections of the admin app: Restaurants, Users, Reviews, and Logout.
 - **Tasks**:
-  - Design a menu accessible throughout the admin app.
-  - Ensure easy navigation to the Restaurants, Users, Reviews pages, and a Logout option.
+  - Design a menu that is accessible throughout the admin app.
+  - Ensure easy navigation to the Restaurants, Users, and Reviews pages and a Logout option.
 
 ### Restaurants Page
 - **Objective**: List restaurants with pagination, displaying brief data for each restaurant.
 - **Tasks**:
-  - Fetch and display a list of restaurants showing name, city, countryCode and average of ratings from reviews.
+  - Fetch and display a list of restaurants showing name, city, countryCode and average ratings from reviews.
   - Implement pagination to manage the display of a large number of restaurants. Maximum number of items per page is 10.
   - Design the UI for clarity and ease of use.
 
@@ -45,5 +46,5 @@ The admin app should be designed with a user-friendly interface and provide effi
 - **Objective**: Simulate a logout process for the admin application.
 - **Tasks**:
   - Implement a logout mechanism that, when triggered, redirects the user back to the login page.
-  - Ensure that the logout process is intuitive and accessible from the navigation menu.
+  - Ensure the logout process is intuitive and accessible from the navigation menu.
 
