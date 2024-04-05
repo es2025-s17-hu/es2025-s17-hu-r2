@@ -1,12 +1,5 @@
 # Module B - DineEase Admin
 
-<!-- - Login page (there is no fully functional endpoint, only get all users, simulate logging process)
-- Menu (Restaurants, Users, Reviews, Logout)
-- Restaurants page: list retaurants (paging) with their brief data (name, city, countryCode, address, average review rating)
-- Users page: list restaurant owner users with their brief data (name, e-mail, isEnabled), show details (brief + plan, frequency of payment)+ when click and can change isEnabled
-- Reviews page: list reviews (name of the restaurant, city, country code, name of the reviwer, rating) sorted by createdAt desc, review text show as accordion, delete button at the end of the row
-- Logout (simulate) -->
-
 ## Description of the Module
 This module requires competitors to develop an admin application for DineEase staff, utilizing the backend developed in Module A. The admin application is a crucial tool for managing data related to restaurants, users, and reviews. It includes several key features and pages, each serving a specific administrative function.
 
