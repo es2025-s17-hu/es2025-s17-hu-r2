@@ -55,5 +55,5 @@ In the admin app, restaurant reviews can be displayed, and unwanted entries can 
 On the DineEase website, restaurant owners can register by entering their personal details and those of the restaurant or restaurants they serve. In addition, during the registration process, they also indicate which subscription plan they choose.
 
 - Post a registration that creates a new restaurant owner user, sets up the selected subscription plan and creates one or more restaurant records.
-
+  - Please mind the validation, including not accepting more restaurants than allowed in the selected plan.
 
