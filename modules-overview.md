@@ -77,7 +77,7 @@ The Laravel project contains all the necessary files, so you will not need to `c
 
 ### Deployment
 
-When you commit and push your work, the deployment will start automatically. You can follow the process in the Gitea interface under the Action tab. Once the deployment is complete, your project will be available at https://competitor-YYYY-module-x.dineease.com, where `YYYY` is your four-digit pin code and `x` is the letter of the module.
+When you commit and push your work, the deployment will start automatically. You can follow the process in the Gitea interface under the Action tab. Once the deployment is complete, your project will be available at https://competitor-YYYY-module-x.dineease.com, where `YYYY` is your four-digit PIN code and `x` is the letter of the module.
 
 ### Database access
 
