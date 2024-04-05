@@ -1,17 +1,17 @@
 # Module A - DineEase Backend
 
 ## Description of the Module
-In this module you need to create the prototype of the backend of the DineEase service. The backend will provide data to the admin application managed by the DineEase staff and to the web application providing the service.
+In this module, you need to create the prototype of the backend of the DineEase service. The backend will provide data to the admin application managed by the DineEase staff, and the web application will provide the service.
 
-The data served by the backend is stored in a MySQL database. The database is accessed at db.dineease.com, port 3306, with the username and password provided.  The name of the database is `competitor-YYYY`, where `YYYY` is the four-digit pin.
+The data served by the backend is stored in a MySQL database. The database is accessed at db.dineease.com, port 3306, with the username and password provided. The database name is `competitor-YYYY`, where `YYYY` is the four-digit pin.
 
-The database is currently empty. Use the givem SQL dump in `assets/module-a/dineeasy.sql` to import the data.
+The database is currently empty. Use the given SQL dump in `assets/module-a/dineeasy.sql` to import the data.
 
 ![DineEase](assets/images/db-diagram.png)
 
 ## Backend Task
 
-You will need to create several endpoints, which will be available at the base URL `http://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
+You must create several endpoints, which will be available at the base URL `http://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
 
 The technical details of the endpoints implemented by the backend are contained in the `assets/module-a/dineeasy.yaml` file in OpenAPI format. 
 
@@ -26,26 +26,26 @@ To do this, you need to create three endpoints:
 
 ### Restaurants
 
-In the admin interface you need to list the restaurants. To do this you need to implement the following endpoint:
+In the admin interface, you need to list the restaurants. To do this, you need to implement the following endpoint:
 
 - get all restaurants by averaging the ratings (reviews) for each restaurant
 
 ### Plans
 
-Also in the admin app, DineEase staff can modify subscription plans. To do this, the following functionality must be provided:
+Also, DineEase staff can modify subscription plans in the admin app. To do this, the following functionality must be provided:
 
 - get the data of all plans
 - update a selected plan
 
 ### Roles
 
-The user roles cannot be changed in the admin interface, but you may need the role details. To do this you need to create just one endpoint.
+The user roles cannot be changed in the admin interface, but you may need the role details. To do this, you need to create just one endpoint.
 
 - get the data of all roles
 
 ### Reviews
 
-In the admin app, restaurant reviews can be displayed and unwanted entries can be deleted. To do this, you need to create two endpoints:
+In the admin app, restaurant reviews can be displayed, and unwanted entries can be deleted. To do this, you need to create two endpoints:
 
 - get all reviews with brief data (name and city) about the corresponding restaurant, sorted backwards by date of entry
 - delete a selected review
