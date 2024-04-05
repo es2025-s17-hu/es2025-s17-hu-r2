@@ -3,7 +3,7 @@
 ## Description of the Module
 This module requires competitors to develop an admin application for DineEase staff, utilizing the backend developed in Module A. **Don't use the backend you developed, use the fully functional backend you received: https://competitor-yyyy-solution.dineease.com, where YYYY is your four-digit PIN code.** The admin application is a crucial tool for managing data related to restaurants, users, and reviews. It includes several key features and pages, each serving a specific administrative function.
 
-For easier design, some wireframes are available in the `assets/module-a/design` folder. You don't have to follow the design strictly, but the admin app should be designed with a user-friendly interface and provide efficient navigation through its various functionalities. 
+For easier design, some wireframes are available in the `assets/module-a/design` folder. You don't have to follow the wireframes strictly, but the admin app should be designed with a user-friendly interface and provide efficient navigation through its various functionalities. 
 
 Below are the detailed descriptions of the different subtasks involved in this module.
 
