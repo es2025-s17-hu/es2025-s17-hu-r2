@@ -15,9 +15,9 @@ In this round, you will have three different tasks. First, you must create a bac
 
 Descriptions of the three tasks:
 
-- [Modules A - DineEase Backend](module-a.md)
-- [Modules B - DineEase Admin](module-b.md)
-- [Modules C - DineEase Showcase Website](module-c.md)
+- [Module A - DineEase Backend](module-a.md)
+- [Module B - DineEase Admin](module-b.md)
+- [Module C - DineEase Showcase Website](module-c.md)
 
 ## Technical Environment
 
@@ -45,8 +45,8 @@ After logging in, create a new repo for the next task.
 
 ![Create new repo](assets/images/create-new-repo.png)
 
-- In the Owner field, select `competitors` team! **Make sure you set this option carefully, because if you set your own user as owner, the automatic deployment will not work!** 
-- Give the name of the new repo using the following pattern: `module-a-YYYY`, where `YYYY` is the 4-digit pin code you received. **Make sure you set the name of the repocarefully, because if you make mistake, the automatic deployment will not work!** 
+- In the Owner field, select `competitors` team! **Make sure you set this option carefully because if you set your own user as owner, the automatic deployment will not work!** 
+- Give the name of the new repo using the following pattern: `module-a-YYYY`, where `YYYY` is the 4-digit PIN code you received. **Make sure you set the repo's name carefully because if you make a mistake, the automatic deployment will not work!** 
 - Under the template field, select the appropriate template (e.g. `react-ts-app`). Select `Git Content (Default Branch)` for `Template Items`.
 
 ![Create new repo](assets/images/new-repo-by-template.png)
