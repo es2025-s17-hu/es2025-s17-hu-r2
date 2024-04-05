@@ -11,9 +11,9 @@ The database is currently empty. Use the givem SQL dump in `assets/module-a/dine
 
 ## Backend Task
 
-You will need to create several endpoints, which will be available at the base URL `http://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
+You will need to create several endpoints, which will be available at the base URL `https//competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
 
-The technical details of the endpoints implemented by the backend are contained in the `assets/module-a/dineeasy.yaml` file in OpenAPI format. 
+The technical details of the endpoints implemented by the backend are contained in the `assets/module-a/dineeasy.yaml` file in OpenAPI format.
 
 ### Users
 
@@ -56,4 +56,9 @@ On the DineEase website, restaurant owners can register by entering their person
 
 - Post a registration that creates a new restaurant owner user, sets up the selected subscription plan and creates one or more restaurant records.
 
+### Fully functional backend solution
 
+We provide a fully functional solution for the backend that you can use for testing. The backend solution that uses your database is 
+https://competitor-yyyy-solution, where YYYY is your four-digit pin code.
+
+There is an extra endpoint which can reset the database to the original state: POST /api/v1/db-reset

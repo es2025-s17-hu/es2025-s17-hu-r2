@@ -15,9 +15,9 @@ In this round you will have three different tasks. First you have to create a ba
 
 Descriptions of the three tasks:
 
-- [Modules A - DineEase Backend](module-a.md)
-- [Modules B - DineEase Admin](module-b.md)
-- [Modules C - DineEase Admin](module-c.md)
+- [Module A - DineEase Backend](module-a.md)
+- [Module B - DineEase Admin](module-b.md)
+- [Module C - DineEase Showcase Website](module-c.md)
 
 ## Technical Environment
 
@@ -34,7 +34,8 @@ The available template repos:
 - vue-app
 - vue-ts-app
 - laravel
-- nodejs-app
+- node-app
+- node-ts-app
 
 The Gitea service is available at the following address:
 [https://gitea.dineease.com](https://gitea.dineease.com)
@@ -45,7 +46,7 @@ After logging in, create a new repo for the next task.
 ![Create new repo](assets/images/create-new-repo.png)
 
 - In the Owner field, select `competitors` team! **Make sure you set this option carefully, because if you set your own user as owner, the automatic deployment will not work!** 
-- Give the name of the new repo using the following pattern: `es2025-s17-hu-r2-module-a-YYYY`, where `YYYY` is the 4-digit pin code you received.
+- Give the name of the new repo using the following pattern: `module-a-YYYY`, where `YYYY` is the 4-digit pin code you received. **Make sure you set the name of the repocarefully, because if you make mistake, the automatic deployment will not work!** 
 - Under the template field, select the appropriate template (e.g. `react-ts-app`). Select `Git Content (Default Branch)` for `Template Items`.
 
 ![Create new repo](assets/images/new-repo-by-template.png)
@@ -76,7 +77,7 @@ The Laravel project contains all the necessary files, so you will not need to `c
 
 ### Deployment
 
-When you commit and push your work, the deployment will start automatically. You can follow the process in the Gitea interface under the Action tab. Once the deployment is complete, your project will be available at http://competitor-YYYY-module-x.dineease.com, where `YYYY` is your four-digit pin code and `x` is the letter of the module.
+When you commit and push your work, the deployment will start automatically. You can follow the process in the Gitea interface under the Action tab. Once the deployment is complete, your project will be available at https://competitor-YYYY-module-x.dineease.com, where `YYYY` is your four-digit pin code and `x` is the letter of the module.
 
 ### Database access
 
