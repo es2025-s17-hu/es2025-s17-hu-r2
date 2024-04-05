@@ -13,7 +13,7 @@ The database is currently empty. Use the givem SQL dump in `assets/module-a/dine
 
 You will need to create several endpoints, which will be available at the base URL `http://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
 
-The technical details of the endpoints implemented by the backend are contained in the [assets/module-a/dineeasy.yaml](assets/module-a/dineeasy.yaml) file in OpenAPI format. 
+The technical details of the endpoints implemented by the backend are contained in the [`assets/module-a/dineeasy.yaml`](assets/module-a/dineeasy.yaml) file in OpenAPI format. 
 
 ### Users
 
