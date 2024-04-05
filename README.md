@@ -17,9 +17,9 @@
 
 ## Modules
 - [Modules Overview](modules-overview.md)
-- [Modules A - DineEase Backend](module-a.md)
-- [Modules B - DineEase Admin](module-b.md)
-- [Modules C - DineEase Admin](module-c.md)
+- [Module A - DineEase Backend](module-a.md)
+- [Module B - DineEase Admin](module-b.md)
+- [Module C - DineEase Showcase Website](module-c.md)
 
 
 
