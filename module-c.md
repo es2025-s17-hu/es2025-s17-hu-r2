@@ -22,10 +22,10 @@ You should ensure that the design of all subpages is visually aligned, creating 
 - Average bill per client -->
 
 ### Objective
-Create a simplified version of the DineEase showcase website, focusing on cohesive design and user experience across all subpages. A significant addition to this module is the implementation of a new registration page for restaurants. Competitors must strictly adhere to the provided design files, ensuring that the visual and thematic alignment of all elements reflects DineEase's vision.
+Create a simplified version of the DineEase showcase website, focusing on cohesive design and user experience across all subpages. A significant addition to this module is the implementation of a new registration page for restaurants. You must strictly adhere to the provided design files, ensuring that the visual and thematic alignment of all elements reflects DineEase's vision.
 
 ### Assets
-All necessary design files, images, and text content are available in the `assets` folder. Competitors are expected to utilize these resources to ensure fidelity to the original design specifications.
+All necessary design files, images, and text content are available in the `assets` folder. You are expected to utilize these resources to ensure fidelity to the original design specifications.
 
 ## Subtasks
 
