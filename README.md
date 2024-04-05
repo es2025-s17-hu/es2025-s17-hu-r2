@@ -1,5 +1,5 @@
 # EuroSkills Herning 2025 Hungarian National Competition, Web Development - Round 2
-### 05.06.2023.
+### 04.06.2024.
 #### Budapest, Hungary
 
 ![DineEase](assets/images/DineEase.png)

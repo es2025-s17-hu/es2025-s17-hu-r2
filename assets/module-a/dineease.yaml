@@ -211,6 +211,10 @@ components:
           type: string
         countryCode:
           type: string
+        description:
+          type: string
+        imageUrl:
+          type: string
         rating:
           type: number
     Plan:
@@ -224,6 +228,8 @@ components:
           type: number
         yearlyFee:
           type: number
+        maxNumberOfRestaurants:
+          type: integer          
         description:
           type: string
     PlanUpdate:
@@ -235,6 +241,8 @@ components:
           type: number
         yearlyFee:
           type: number
+        maxNumberOfRestaurants:
+          type: integer
         description:
           type: string
     Role:
