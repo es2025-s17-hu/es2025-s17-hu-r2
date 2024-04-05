@@ -4,15 +4,15 @@
 
 You have already created an immersive and visually appealing showcase website for DineEase dining platform in the previous round. Since you performed that task under uncontrolled conditions and in a long timeframe, management wants to test whether you can produce work of similar quality under controlled conditions and time pressure. For this reason, you will need to create a simplified version of the site, complete with a new registration page.
 
-You should ensure that the design of all subpages is visually aligned, creating a cohesive and harmonious user experience. You should follow the provided design file as much as possible. The design files, images and text content can be found in the `assets` folder.
+You should ensure that the design of all subpages is visually aligned, creating a cohesive and harmonious user experience. You should follow the provided design file as much as possible. The design files, images, and text content can be found in the `assets` folder.
 
 <!-- ## Landing Page
 - Header with logo and menubar
 - Hero section
-- Top rated restaurants section
+- Top-rated restaurants section
 - Footer
 ## Restaurant Registration Page
-- Fisrt Name
+- First Name
 - Last Name
 - Email
 - Select Country prefix by country code | Phone number
@@ -37,22 +37,28 @@ Create a landing page that serves as the face of the DineEase platform, incorpor
 - **Footer**: Contains site navigation links, social media links, and copyright information.
 
 ### Restaurant Registration Page
-Develop a registration form for restaurant owners, guiding them through a two-step process to submit their establishment's details:
+Develop a registration form for restaurant owners, guiding them through a three-step process to submit their establishment's details:
 - **Step 1**: Personal Information
   - First Name
   - Last Name
   - Email Address
   - Phone Number (with country code selection)
   - "Next Page" button to proceed to the second step
-- **Step 2**: Restaurant Details
+- **Step 2**: Select a plan
+  - Display available plans
+  - Required to select one
+  - Add a switch to display monthly or yearly prices
+- **Step 3**: Restaurant Details
   - Restaurant Name
   - Location (including country and city)
-  - Average bill per client
+  - Average bill per client (numbers only)
+ 
+Handle API errors on the last screen after clicking the Sign up button. Display the error message on the screen.
 
 ## Design and User Experience
 - The design of all subpages must be visually aligned to ensure a cohesive and harmonious user experience.
 - Follow the design guidelines and elements provided in the `assets` folder meticulously.
-- Prioritize responsiveness and accessibility to ensure the website is user-friendly across various devices and assistive technologies.
+- Prioritize responsiveness and accessibility to ensure the website is user-friendly across various devices and assistive technologies. Mobile breakpoint: 768px
 
 ## Evaluation Criteria
 - **Adherence to Design**: Fidelity to the provided design files and effective implementation of the visual theme.
