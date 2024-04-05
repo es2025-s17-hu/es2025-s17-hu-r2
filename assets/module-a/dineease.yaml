@@ -37,7 +37,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserDetailed'
-
+        '404':
+          description: User with the requested id cannot be found
+          content:
+            application/json: 
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: User not found
     put:
       summary: Disable or activate a user
       parameters:
@@ -58,7 +67,19 @@ paths:
       responses:
         '200':
           description: User activation status updated
-
+          
+  /restaurants:
+    get:
+      summary: Get brief data of all restaurants with average rating
+      responses:
+        '200':
+          description: An array of restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
   /plans:
     get:
       summary: Get the data of all plans
@@ -148,6 +169,7 @@ paths:
         '201':
           description: Done
 
+
 components:
   schemas:
     UserBrief:
@@ -159,17 +181,38 @@ components:
           type: string
         lastName:
           type: string
+        email:
+          type: string
+        isActive:
+          type: boolean
     UserDetailed:
       allOf:
         - $ref: '#/components/schemas/UserBrief'
         - type: object
           properties:
-            email:
-              type: string
             roleId:
               type: integer
             planId:
               type: integer
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        city:
+          type: string
+        cuisine: 
+          type: string
+        address: 
+          type: string
+        zipCode:
+          type: string
+        countryCode:
+          type: string
+        rating:
+          type: number
     Plan:
       type: object
       properties:

@@ -29,7 +29,7 @@ The admin app should be designed with a user-friendly interface and provide effi
 ### Restaurants Page
 - **Objective**: List restaurants with pagination, displaying brief data for each restaurant.
 - **Tasks**:
-  - Fetch and display a list of restaurants showing name, city, countryCode, address, and average review rating.
+  - Fetch and display a list of restaurants showing name, city, countryCode and average of ratings from reviews.
   - Implement pagination to manage the display of a large number of restaurants. Maximum number of items per page is 10.
   - Design the UI for clarity and ease of use.
 

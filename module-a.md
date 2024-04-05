@@ -20,9 +20,15 @@ The technical details of the endpoints implemented by the backend are contained 
 In the DineEase staff admin interface, it is possible to list restaurant owner users as well as activate and deactivate the user.
 To do this, you need to create three endpoints:
 
-- get brief data of all users
+- get brief data of all users 
 - get detailed information about a selected user
-- disable or deactivate a user
+- disable or activate a user
+
+### Restaurants
+
+In the admin interface you need to list the restaurants. To do this you need to implement the following endpoint:
+
+- get all restaurants by averaging the ratings (reviews) for each restaurant
 
 ### Plans
 
