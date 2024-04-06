@@ -7,10 +7,10 @@ You have already created an immersive and visually appealing showcase website fo
 You should ensure that the design of all subpages is visually aligned, creating a cohesive and harmonious user experience. You should follow the provided design file as much as possible. The design files, images, and text content can be found in the `assets` folder.
 
 ### Objective
-Create a simplified version of the DineEase showcase website, focusing on cohesive design and user experience across all subpages. A significant addition to this module is the implementation of a new registration page for restaurants. Competitors must strictly adhere to the provided design files, ensuring that the visual and thematic alignment of all elements reflects DineEase's vision.
+Create a simplified version of the DineEase showcase website, focusing on cohesive design and user experience across all subpages. A significant addition to this module is the implementation of a new registration page for restaurants. You must strictly adhere to the provided design files, ensuring that the visual and thematic alignment of all elements reflects DineEase's vision.
 
 ### Assets
-All necessary design files, images, and text content are available in the `assets` folder. Competitors are expected to utilize these resources to ensure fidelity to the original design specifications.
+All necessary design files, images, and text content are available in the `assets` folder. You are expected to utilize these resources to ensure fidelity to the original design specifications.
 
 ## Subtasks
 

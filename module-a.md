@@ -11,7 +11,7 @@ The database is currently empty. Use the given SQL dump in `assets/module-a/dine
 
 ## Backend Task
 
-You must create several endpoints, which will be available at the base URL `https://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin.
+You must create several endpoints, which will be available at the base URL `https://competitor-YYYY-module-a.dineease.com/api/v1`,  where `YYYY` is your four-digit pin. **Your backend should listen on port 80**, `http` will be replaced to `https` by our server infrastructure for the deployed version.
 
 The technical details of the endpoints implemented by the backend are contained in the [`assets/module-a/dineease.yaml`](assets/module-a/dineease.yaml) file in OpenAPI format. 
 
