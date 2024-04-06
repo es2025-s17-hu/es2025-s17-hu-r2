@@ -62,4 +62,4 @@ On the DineEase website, restaurant owners can register by entering their person
 We provide a fully functional solution for the backend that you can use for testing. The backend solution that uses your database is 
 https://competitor-yyyy-solution.dineease.com, where YYYY is your four-digit PIN code.
 
-There is an extra endpoint which can reset the database to the original state: POST `/api/v1/db-reset`
+There is an extra endpoint which can reset the database to the original state: POST `/api/v1/reset-db`

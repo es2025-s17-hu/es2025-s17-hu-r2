@@ -6,21 +6,6 @@ You have already created an immersive and visually appealing showcase website fo
 
 You should ensure that the design of all subpages is visually aligned, creating a cohesive and harmonious user experience. You should follow the provided design file as much as possible. The design files, images, and text content can be found in the `assets` folder.
 
-<!-- ## Landing Page
-- Header with logo and menubar
-- Hero section
-- Top-rated restaurants section
-- Footer
-## Restaurant Registration Page
-- First Name
-- Last Name
-- Email
-- Select Country prefix by country code | Phone number
-- Next page
-- Restaurant Name
-- Location (country, city)
-- Average bill per client -->
-
 ### Objective
 Create a simplified version of the DineEase showcase website, focusing on cohesive design and user experience across all subpages. A significant addition to this module is the implementation of a new registration page for restaurants. Competitors must strictly adhere to the provided design files, ensuring that the visual and thematic alignment of all elements reflects DineEase's vision.
 
@@ -42,18 +27,27 @@ Develop a registration form for restaurant owners, guiding them through a three-
   - First Name
   - Last Name
   - Email Address
-  - Phone Number (with country code selection)
-  - "Next Page" button to proceed to the second step
+  - Password
+  - "Continue" button to proceed to the second step
 - **Step 2**: Select a plan
   - Display available plans
   - Required to select one
   - Add a switch to display monthly or yearly prices
+  - "Continue" button to proceed to the second step
 - **Step 3**: Restaurant Details
   - Restaurant Name
-  - Location (including country and city)
-  - Average bill per client (numbers only)
- 
-Handle API errors on the last screen after clicking the Sign up button. Display the error message on the screen.
+  - Cuisine
+  - Country (select from the list - you can find `country-codes.json` in the assets)
+  - ZIP code
+  - City
+  - Address
+  - "x" button on each restaurant form to remove that restaurant
+  - "Add new restaurant" button to give one more restaurant. (Make sure that this option is only available up to the maximum number of restaurants in the plan.)
+  - "Sig Up" button to finish the registration process
+
+If the user wants to navigate back to a previous page, they can do so by clicking on the number of the previous page.
+   
+Handle API errors on the last screen after clicking the Sign up button. Display the error message on the screen. (For example, an API error may be generated if you try to register twice with the same email address.)
 
 ## Design and User Experience
 - The design of all subpages must be visually aligned to ensure a cohesive and harmonious user experience.
