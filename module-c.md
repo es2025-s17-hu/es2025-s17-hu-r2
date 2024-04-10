@@ -43,7 +43,7 @@ Develop a registration form for restaurant owners, guiding them through a three-
   - Address
   - "x" button on each restaurant form to remove that restaurant
   - "Add new restaurant" button to give one more restaurant. (Make sure that this option is only available up to the maximum number of restaurants in the plan.)
-  - "Sig Up" button to finish the registration process
+  - "Sign Up" button to finish the registration process
 
 If the user wants to navigate back to a previous page, they can do so by clicking on the number of the previous page.
    
