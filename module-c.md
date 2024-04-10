@@ -33,7 +33,7 @@ Develop a registration form for restaurant owners, guiding them through a three-
   - Display available plans
   - Required to select one
   - Add a switch to display monthly or yearly prices
-  - "Continue" button to proceed to the second step
+  - "Continue" button to proceed to the next step
 - **Step 3**: Restaurant Details
   - Restaurant Name
   - Cuisine
